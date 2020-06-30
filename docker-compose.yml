@@ -1,0 +1,36 @@
+version: '3.7'
+
+networks:
+    currency-exchange:
+        driver: bridge
+
+services:
+    server:
+        build:
+            context: ./server
+        image: kekslv/currency/server
+        networks:
+            - currency-exchange
+        ports:
+            - '8080:8080'
+        environment: 
+            - CLIENTS=http://client1,http://client2
+        depends_on:
+            - client1
+            - client2
+    client1:
+        build:
+            context: ./client1
+        image: kekslv/currency/client1
+        networks:
+            - currency-exchange
+        ports:
+            - '8180:8080'
+    client2:
+        build:
+            context: ./client2
+        image: kekslv/currency/client2
+        networks:
+            - currency-exchange
+        ports:
+            - '8280:8080'

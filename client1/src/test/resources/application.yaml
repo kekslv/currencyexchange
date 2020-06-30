@@ -1,0 +1,14 @@
+spring:
+  profiles:
+    active: test
+logging:
+  level:
+    org.springframework.web.reactive.function.client.ExchangeFunctions: debug
+server:
+  error:
+    include-stacktrace: on_trace_param
+    include-message: always
+
+external:
+  api:
+    url: http://localhost:9090

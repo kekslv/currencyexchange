@@ -1,0 +1,18 @@
+spring:
+  application:
+    name: external client 1
+  profiles:
+    active: default
+server:
+  error:
+    include-stacktrace: on_trace_param
+    include-message: always
+  port: ${PORT:8080}
+logging:
+  level:
+    org.springframework.web.reactive.function.client.ExchangeFunctions: debug
+
+
+external:
+  api:
+    url: https://api.exchangeratesapi.io
