@@ -7,7 +7,7 @@ WORKDIR /tmp/
 RUN mvn package spring-boot:repackage
 
 FROM adoptopenjdk/openjdk11:alpine-jre
-EXPOSE 8080
+EXPOSE 8280
 RUN mkdir /app
 COPY --from=MAVEN_BUILD /tmp/target/*.jar /app/app.jar
 ENTRYPOINT ["java", "-jar", "/app/app.jar"]

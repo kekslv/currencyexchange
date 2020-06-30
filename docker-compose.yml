@@ -2,7 +2,6 @@ version: '3.7'
 
 networks:
     currency-exchange:
-        driver: bridge
 
 services:
     server:
@@ -14,7 +13,7 @@ services:
         ports:
             - '8080:8080'
         environment: 
-            - CLIENTS=http://client1,http://client2
+            - CLIENTS=http://client1:8180,http://client2:8280
         depends_on:
             - client1
             - client2
@@ -25,7 +24,7 @@ services:
         networks:
             - currency-exchange
         ports:
-            - '8180:8080'
+            - '8180:8180'
     client2:
         build:
             context: ./client2
@@ -33,4 +32,4 @@ services:
         networks:
             - currency-exchange
         ports:
-            - '8280:8080'
+            - '8280:8280'

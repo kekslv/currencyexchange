@@ -7,7 +7,7 @@ server:
   error:
     include-stacktrace: on_trace_param
     include-message: always
-  port: ${PORT:8080}
+  port: ${PORT:8180}
 logging:
   level:
     org.springframework.web.reactive.function.client.ExchangeFunctions: debug
