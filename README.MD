@@ -10,9 +10,9 @@ It uses external providers to obtain exchange rate and perform required calculat
 
 Exchange flow
 
-![Exchange Flow](docs/Currency Exchange Flow.png)
+![Exchange Flow](docs/Currency_Exchange_Flow.png)
 
-##Components
+## Components
 - server - accepts requests for currency exchanges, retrieve exchange rate from clients, perform calculations and return the data
 - client1..n - a separate web application that is responsible to retrieve exchange rates from external providers
 
